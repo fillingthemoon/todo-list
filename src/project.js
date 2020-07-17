@@ -45,7 +45,7 @@ function createProjectContainer(projectArray) {
 
   const projectContainerHeader = document.createElement('h3');
   projectContainerHeader.id = 'project-container-header';
-  projectContainerHeader.textContent = 'My Projects';
+  projectContainerHeader.textContent = 'My Lists';
   projectContainer.appendChild(projectContainerHeader);
   
   projectArray = createProjects();
@@ -56,6 +56,7 @@ function createProjectContainer(projectArray) {
     projectDiv.classList.add('proj-div');
   
     let projectTitle = document.createElement('h3');
+    projectTitle.classList = 'proj-title';
     projectTitle.id = 'proj-title-' + (i + 1);
     projectTitle.textContent = projectArray[i].getTitle();
     projectDiv.appendChild(projectTitle);
@@ -64,11 +65,12 @@ function createProjectContainer(projectArray) {
 
     for (let j = 0; j < todoArray.length; j++) {
       const todoDiv = document.createElement('div');
+      todoDiv.classList.add('todo-div');
       const todoDivHeader = document.createElement('p'); 
-      todoDivHeader.id = 'todo-div-header';
+      todoDivHeader.classList.add('todo-div-header');
       todoDivHeader.textContent = todoArray[j].getTitle();
       const todoDivContent = document.createElement('p'); 
-      todoDivContent.id = 'todo-div-content';
+      todoDivContent.classList.add('todo-div-content');
       todoDivContent.textContent = todoArray[j].getDescription();
 
       todoDiv.appendChild(todoDivHeader);

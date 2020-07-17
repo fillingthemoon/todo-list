@@ -1,12 +1,57 @@
+/* https://tinyurl.com/coolortheme */
+
 body {
   font-family: 'Lato', sans-serif;
+  margin: 0px;
 }
 
 #content {
   display: grid;
-  grid-template-columns: 1fr 4fr;
+  grid-template-columns: 350px auto;
+  width: 100%;
+  height: 920px;
 }
 
 h1 {
   font-weight: 700;
+  font-size: 3em;
+  color: #f5cb5c;
+  margin: 0px 0px 0px 0px;
+}
+
+h2 {
+  font-size: 1.2em;
+  color: #e8eddf;
+  font-weight: 400;
+}
+
+a {
+  color: #f5cb5c;
+  outline: none;
+  text-decoration: none;
+}
+
+#sidebar-container {
+  background-color: #242423;
+  padding: 30px; 
+}
+
+#sidebar-container-header {
+  margin-bottom: 30px;
+  text-align: center;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #f5cb5c;
+}
+
+#project-container {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+#project-container-header {
+  color: #e8eddf;
+}
+
+#mainpage-container {
+  background-color: #e8eddf;
 }

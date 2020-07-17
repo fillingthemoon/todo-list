@@ -1,5 +1,7 @@
+import { checkLocalStorage } from './localStorage.js';
 import { getTodos } from './todo.js';
 
+checkLocalStorage();
 const content = document.getElementById('content');
 
 // Factory to create Projects
@@ -21,7 +23,7 @@ const Project = (title) => {
 }
 
 // Create Projects and Project Array
-function createProjects() {
+function addProjects() {
 
   const proj1 = Project('Homework');
   const proj2 = Project('House work');
@@ -43,12 +45,22 @@ function createProjectContainer(projectArray) {
   const projectContainer = document.createElement('div');
   projectContainer.id = 'project-container';
 
+  const projectContainerHeaderDiv = document.createElement('div');
+  projectContainerHeaderDiv.id = 'project-container-header-div';
+
   const projectContainerHeader = document.createElement('h3');
   projectContainerHeader.id = 'project-container-header';
   projectContainerHeader.textContent = 'My Lists';
-  projectContainer.appendChild(projectContainerHeader);
+
+  const projectContainerAddBtn = document.createElement('button');
+  projectContainerAddBtn.id = 'project-container-add-btn';
+  projectContainerAddBtn.textContent = '+';
+
+  projectContainerHeaderDiv.appendChild(projectContainerHeader);
+  projectContainerHeaderDiv.appendChild(projectContainerAddBtn);
+  projectContainer.appendChild(projectContainerHeaderDiv);
   
-  projectArray = createProjects();
+  projectArray = addProjects();
 
   for (let i = 0; i < projectArray.length; i++) {
     let projectDiv = document.createElement('div');
@@ -82,6 +94,10 @@ function createProjectContainer(projectArray) {
   }
   
   return projectContainer; 
+}
+
+const render = () => {
+  
 }
 
 const popProjects = () => {

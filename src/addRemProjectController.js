@@ -1,24 +1,43 @@
 import { getTodos } from './todo.js';
 import { Project } from './project.js';
 
+const keys = []
+const getNewId = () => {
+  /*
+  if (localStorage.length > 0) {
+    return Math.max(...Object.keys(localStorage).map(x => parseInt(x))) + 1;
+  } else {
+    return 0;
+  }
+  */
+  for (let i = 0; i < 100; i++) {
+    if (!keys.includes(i)) {
+      keys.push(i);
+      return i;
+    }
+  }
+}
+
 const clickAddProjBtn = (projectArray) => {
-  const todoItems = getTodos()[0];
   const projectContainer = document.getElementById('project-container'); 
   const projectContainerAllProjs = document.createElement('div');
   projectContainerAllProjs.id = 'project-container-all-projs';
+
   const addProjBtn = document.getElementById('project-container-add-proj-btn');
   addProjBtn.addEventListener('click', addNewProj);
 
+  const todoItems = getTodos()[0];
+
   function addNewProj(e) {
-    console.log('hi');
+    const newId = getNewId();
     let projectDiv = document.createElement('div');
-    projectDiv.id = 1;
+    projectDiv.id = 'proj-div-' + newId; 
     projectDiv.classList.add('proj-div');
 
     const newProj = Project('New Project');
     let projectTitle = document.createElement('h3');
     projectTitle.classList = 'proj-title';
-    projectTitle.id = 'proj-title-' + 1;
+    projectTitle.id = 'proj-title-' + newId;
     projectTitle.textContent = newProj.getTitle();
     projectDiv.appendChild(projectTitle);
 

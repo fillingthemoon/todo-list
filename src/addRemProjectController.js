@@ -1,12 +1,12 @@
 import { getTodos } from './todo.js';
 import { Project } from './project.js';
 
-const popBtn = (projectArray) => {
+const clickAddProjBtn = (projectArray) => {
   const todoItems = getTodos()[0];
   const projectContainer = document.getElementById('project-container'); 
+  const projectContainerAllProjs = document.createElement('div');
+  projectContainerAllProjs.id = 'project-container-all-projs';
   const addProjBtn = document.getElementById('project-container-add-proj-btn');
-  //console.log(projectContainer);
-  //console.log(addProjBtn.textContent);
   addProjBtn.addEventListener('click', addNewProj);
 
   function addNewProj(e) {
@@ -15,7 +15,7 @@ const popBtn = (projectArray) => {
     projectDiv.id = 1;
     projectDiv.classList.add('proj-div');
 
-    const newProj = Project('Homework');
+    const newProj = Project('New Project');
     let projectTitle = document.createElement('h3');
     projectTitle.classList = 'proj-title';
     projectTitle.id = 'proj-title-' + 1;
@@ -39,12 +39,19 @@ const popBtn = (projectArray) => {
       todoDiv.appendChild(todoDivContent);
       projectDiv.appendChild(todoDiv);
     }
-    projectContainer.appendChild(projectDiv);
+
+    projectContainerAllProjs.appendChild(projectDiv);
+    projectContainer.appendChild(projectContainerAllProjs);
     return projectContainer;
   }
 
 }
 
+const clickRemProjBtn = () => {
+
+}
+
 export {
-  popBtn,
+  clickAddProjBtn,
+  clickRemProjBtn,
 }

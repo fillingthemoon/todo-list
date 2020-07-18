@@ -1,5 +1,4 @@
 import { checkLocalStorage } from './localStorage.js';
-import { popBtn } from './addProjectController.js';
 
 checkLocalStorage();
 const content = document.getElementById('content');

@@ -38,11 +38,14 @@ a:hover {
 
 #sidebar-container-header-div {
   text-align: center;
-  padding-bottom: 10px;
+  position: fixed;
+  padding-top: 20px;
+  z-index: 2;
+  background-color: #242423;
 }
 
 #sidebar-container-header {
-  margin: 30px 30px 0px 30px;
+  width: 350px;
 }
 
 #sidebar-container-tagline {
@@ -54,13 +57,14 @@ a:hover {
   padding-bottom: 20px;
 }
 
+/* repo link */
 #sidebar-container-subheader {
-  font-size: 1.3em;
+  font-size: 1.1em;
   font-weight: 400;
   background-color: #f5cb5c;
   position: fixed;
   width: 350px;
-  height: 40px;
+  height: 35px;
   margin-bottom: auto;
   padding-top: 10px;
   bottom: 0;
@@ -73,12 +77,18 @@ a:hover {
 #project-container {
   display: flex;
   flex-flow: column nowrap;
-  margin: 0px 30px 0px 30px;
+  margin: 0px 0px 80px 0px;
 }
 
 #project-container-header-div {
   display: flex;
-  width: 250px;
+  justify-content: center;
+  width: 350px;
+  height: 90px;
+  margin-top: 120px;
+  position: fixed;
+  background-color: #242423;
+  z-index: 1;
 }
 
 
@@ -90,7 +100,7 @@ a:hover {
 #project-container-add-proj-btn {
   height: 30px;
   width: 30px;
-  margin: auto;
+  margin: 36.5px 60px 35.5px 20px;
   border: none;
   border-radius: 20px;
   background-color: #f5cb5c;
@@ -104,11 +114,15 @@ a:hover {
   transition: 0.2s;
 }
 
+#project-container-all-projs {
+  margin-top: 210px;
+}
+
 .proj-div {
   background-color: #333533;
-  margin: 0px 0px 20px 0px;
+  margin: 15px 30px 15px 30px;
   border-radius: 10px;
-  padding: 10px 20px 0px 20px;
+  padding: 15px 20px 5px 20px;
   transition: 0.2s;
 }
 
@@ -136,4 +150,5 @@ p {
 
 #mainpage-container {
   background-color: #333533;
+
 }

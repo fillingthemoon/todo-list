@@ -38,7 +38,6 @@ const popSidebar = () => {
   sidebarContainer.appendChild(createProjectContainer());
   
   content.appendChild(sidebarContainer);
-
 }
 
 export {

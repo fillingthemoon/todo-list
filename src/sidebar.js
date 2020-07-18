@@ -1,4 +1,4 @@
-import { popProjects } from './project.js';
+import { createProjectContainer } from './project.js';
 
 const content = document.getElementById('content');
 
@@ -35,9 +35,10 @@ const popSidebar = () => {
   sidebarContainer.id = 'sidebar-container';
 
   sidebarContainer.appendChild(createSidebarHeaderDiv());
-  sidebarContainer.appendChild(popProjects());
+  sidebarContainer.appendChild(createProjectContainer());
   
   content.appendChild(sidebarContainer);
+
 }
 
 export {
